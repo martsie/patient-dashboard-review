@@ -212,7 +212,6 @@ const PatientDashboard: React.FC<Props> = ({
   }, [filteredPatients]);
 
   const getPatientRiskLevel = (patient: Patient) => {
-    // Bug: This will crash if lastVisit is null/undefined
     const daysSinceVisit = Math.floor(
       (Date.now() - new Date(patient.lastVisit).getTime()) / (1000 * 60 * 60 * 24)
     );
